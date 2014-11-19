@@ -92,6 +92,17 @@ var projects = {
 };
 
 
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+	
+	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0])
+	$("#skills").append(formattedSkills);
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[1])
+	$("#skills").append(formattedSkills);
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills[2])
+	$("#skills").append(formattedSkills);
 
+
+}
 
 
