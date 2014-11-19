@@ -13,11 +13,15 @@ var bio = {
 	"skills": ["HTML5", "CSS3", "JavaScript"]
 }
 
-bio.work.currentPosition = "Graduate Student Researcher";
-bio.work.employer = "Douglas Hospital";
-bio.work.yearsWorked = "2";
-bio.work.city = "Montreal";
+work.position = "Graduate Student Researcher";
+work.employer = "Douglas Hospital";
+work.yearsWorked = "2";
+work.city = "Montreal";
 
+education["lastSchool"] = "McGill";
+education["years"] = "2";
+education["city"] - "Montreal";
+ 
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -26,8 +30,12 @@ var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
 var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+var formattedTitle = HTMLworkTitle.replace("%data%". work.position);
+var formattedSchool = HTMLschoolName.replace("%data%", education.lastSchool);
 
 
+//$("#header").prepent(formattedSchool)
+//$("#header").prepend(formattedTitle)
 $("#header").prepend(formattedSkills)
 $("#header").prepend(formattedWelcome)
 $("#header").prepend(formattedPicture)
