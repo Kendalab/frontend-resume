@@ -6,19 +6,21 @@ var bio = {
 	"role": "Front-End Web Developer",
 	"contacts": {
 		"mobile" : "647-802-6755",
-		"email": "kendal.adam@gmail.com",
+	"email": "kendal.adam@gmail.com",
 	},
 	"pictureURL": "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10403571_10202745620315741_8553441052524735893_n.jpg?oh=a99fefbab1fac54b388caed506e6c8e2&oe=54E1D402&__gda__=1424062845_2a9dab8ecf8a23aeb8f5b44532f0ecd7",
 	"welcome": "Welcome to my resume",
 	"skills": ["HTML5", "CSS3", "JavaScript"]
 }
 
+var work = {};
 work.position = "Graduate Student Researcher";
 work.employer = "Douglas Hospital";
 work.yearsWorked = "2";
 work.city = "Montreal";
 
-education["lastSchool"] = "McGill";
+var education ={};
+education["name"] = "McGill";
 education["years"] = "2";
 education["city"] - "Montreal";
  
@@ -30,12 +32,14 @@ var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
 var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-var formattedTitle = HTMLworkTitle.replace("%data%". work.position);
-var formattedSchool = HTMLschoolName.replace("%data%", education.lastSchool);
+var formattedTitle = HTMLworkTitle.replace("%data%", work["position"]);
+var formattedSchool = HTMLschoolName.replace("%data%", education.name);
 
 
-//$("#header").prepent(formattedSchool)
-//$("#header").prepend(formattedTitle)
+
+
+$("#main").append(formattedSchool)
+$("#main").append(formattedTitle)
 $("#header").prepend(formattedSkills)
 $("#header").prepend(formattedWelcome)
 $("#header").prepend(formattedPicture)
