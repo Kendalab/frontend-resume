@@ -19,10 +19,35 @@ work.employer = "Douglas Hospital";
 work.yearsWorked = "2";
 work.city = "Montreal";
 
-var education ={};
-education["name"] = "McGill";
-education["years"] = "2";
-education["city"] - "Montreal";
+var education = {
+	"schools": [
+		{
+			"name": "McMaster University",
+			"city": "Hamilton, Ontario",
+			"degree": "B.Sc. Hon.",
+			"major": "Psychology, Behaviour & Neuroscience",
+			"minor": "None",
+			"graduation": 2012
+		},
+		{
+			"name": "McGill University",
+			"city": "Montreal, Quebec",
+			"degree": "M.Sc.",
+			"major": "Integrated Program in Neuroscience",
+			"minor": "None",
+			"graduation": 2014
+		}
+	],
+	"onlineCourses": [
+		{
+			"title": "Javascript Syntax",
+			"school": "Udacity",
+			"dates": 2014,
+			"degree": "Front-End Web Developer Nanodegree"
+		}
+	]
+};
+
  
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
