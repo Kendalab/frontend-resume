@@ -43,7 +43,7 @@ var education = {
 	"schools": [
 		{
 			"name": "McMaster University",
-			"city": "Hamilton, Ontario",
+			"location": "Hamilton, Ontario",
 			"degree": "B.Sc. Hon.",
 			"major": "Psychology, Behaviour & Neuroscience",
 			"minor": "None",
@@ -51,7 +51,7 @@ var education = {
 		},
 		{
 			"name": "McGill University",
-			"city": "Montreal, Quebec",
+			"location": "Montreal, Quebec",
 			"degree": "M.Sc.",
 			"major": "Integrated Program in Neuroscience",
 			"minor": "None",
