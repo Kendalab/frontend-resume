@@ -85,9 +85,8 @@ var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
 var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
-$("#header").prepend(formattedSkills)
+
 $("#header").prepend(formattedWelcome)
 $("#header").prepend(formattedPicture)
 $("#header").prepend(formattedEmail)
@@ -152,18 +151,24 @@ function inName(name) {
 $("#main").append(internationalizeButton);
 
 
-
+// Encapsulated function within the projects object to population the projects section of the page
 projects.display = function() {
 	for (project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".project-entry").append(formattedProjTitle);
+		$(".project-entry:last").append(formattedProjTitle);
 		var formattedProjDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$(".project-entry").append(formattedProjDates);
+		$(".project-entry:last").append(formattedProjDates);
 		var formattedProjDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry").append(formattedProjDescription);
-		var formattedProjImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
-		$(".project-entry").append(formattedProjImage);
+		$(".project-entry:last").append(formattedProjDescription);
+		
+		if (projects.projects[project].images.length > 0) {
+			for (image in projects.projects[project].images){
+				var formattedProjImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+				$(".project-entry:last").append(formattedProjImage);
+			}
+		}
+
 	}
 
 };
