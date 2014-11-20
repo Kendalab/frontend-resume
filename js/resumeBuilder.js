@@ -27,7 +27,7 @@ var work = {
 			"title": "Summer Student Researcher",
 			"location": "Toronto, Ontario",
 			"dates": "Summer 2012",
-			"description": "Performed neuropsychological research relating to vision, audition and aging."
+			"description": "Performed neuropsychological research relating to vision, audition and ageing. Designed stimuli and experiment using MATLAB and Presentation."
 		},
 		{
 			"employer": "Turner Fliescher Architects Inc.",
@@ -91,6 +91,22 @@ var projects = {
 	]
 };
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
+var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
+var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+
+$("#header").prepend(formattedSkills)
+$("#header").prepend(formattedWelcome)
+$("#header").prepend(formattedPicture)
+$("#header").prepend(formattedEmail)
+$("#header").prepend(formattedMobile)
+$("#header").prepend(formattedRole)
+$("#header").prepend(formattedName)
+
 
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -103,7 +119,7 @@ if (bio.skills.length > 0) {
 	$("#skills").append(formattedSkills);
 }
 
-if (work.jobs.length > 0) {
+function displayWork() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -112,15 +128,41 @@ if (work.jobs.length > 0) {
 		$(".work-entry:last").append(formattedEmployerTitle);
 
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		$("#workExperience").append(formattedDates);
+		$(".work-entry:last").append(formattedDates);
 
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		$("#workExperience").append(formattedLocation);
+		$(".work-entry:last").append(formattedLocation);
 
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$("#workExperience").append(formattedDescription);
-	}
+		$(".work-entry:last").append(formattedDescription);
+	};
+};
+
+displayWork();
+
+
+//My way of solving the quiz
+//function inName(name) {
+//	var splName = name.trim().split(" ");
+//	var firstName = splName[0];
+//	firstName = firstName[0].toUpperCase() + firstName.slice(1); 
+//
+//	var lastName = splName[1];
+//	lastName =lastName.toUpperCase()
+//	return firstName + " " + lastName;
+//}
+
+//Proper way to solve the quiz
+function inName(name) {
+	var name = name.trim().split(" ");
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1);
+	name[1] = name[1].toUpperCase();
+	return name[0] + " " + name[1];
 }
+
+
+$("#main").append(internationalizeButton);
+
 
 
 
