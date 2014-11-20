@@ -217,3 +217,7 @@ span {
     display: block;
   }
 }
+
+.content p {
+  color: red;
+}
