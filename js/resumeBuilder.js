@@ -74,7 +74,7 @@ var projects = {
 			"title": "Maple-a-Month",
 			"dates": "2014",
 			"description": "Maple-a-Month is a service in which a different bottle of %100 pure Canadian maple syrup is delivered to your door every month",
-			"images": "https://scontent-a-ord.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1069789_300255893509689_6246938587965157788_n.jpg?oh=56c5f8811bd285c6eab254c95b0d0f65&oe=54E49BDC"
+			"images": ["https://scontent-a-ord.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1069789_300255893509689_6246938587965157788_n.jpg?oh=56c5f8811bd285c6eab254c95b0d0f65&oe=54E49BDC"]
 		}
 	]
 };
@@ -163,9 +163,11 @@ projects.display = function() {
 		$(".project-entry:last").append(formattedProjDescription);
 		
 		if (projects.projects[project].images.length > 0) {
+			console.log(projects.projects[project].images);
 			for (image in projects.projects[project].images){
 				var formattedProjImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
 				$(".project-entry:last").append(formattedProjImage);
+				console.log("Hello");
 			}
 		}
 
@@ -176,6 +178,8 @@ projects.display = function() {
 projects.display();
 
 
+
+$("#mapDiv").append(googleMap);
 
 
 
