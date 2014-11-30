@@ -10,7 +10,7 @@ var bio = {
 	},
 	"pictureURL": "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10403571_10202745620315741_8553441052524735893_n.jpg?oh=a99fefbab1fac54b388caed506e6c8e2&oe=54E1D402&__gda__=1424062845_2a9dab8ecf8a23aeb8f5b44532f0ecd7",
 	"welcome": "Welcome to my resume",
-	"skills": ["HTML5", "CSS3", "JavaScript"]
+	"skills": ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"]
 };
 
 var work = {
@@ -98,12 +98,14 @@ $("#header").prepend(formattedName)
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 	
-	var formattedSkills = HTMLskills.replace("%data%", bio.skills[0])
-	$("#skills").append(formattedSkills);
-			var formattedSkills = HTMLskills.replace("%data%", bio.skills[1])
-	$("#skills").append(formattedSkills);
-		var formattedSkills = HTMLskills.replace("%data%", bio.skills[2])
-	$("#skills").append(formattedSkills);
+	for (x in bio.skills) {
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills[x])
+		$("#skills").append(formattedSkills);
+				//var formattedSkills = HTMLskills.replace("%data%", bio.skills[1])
+		//$("#skills").append(formattedSkills);
+			//var formattedSkills = HTMLskills.replace("%data%", bio.skills[2])
+		//$("#skills").append(formattedSkills);
+	};
 }
 
 function displayWork() {
@@ -181,6 +183,11 @@ projects.display();
 
 $("#mapDiv").append(googleMap);
 
+$(document).ready(function() {
+	$('img').click(function(){
+		$('img').effect('bounce', 'slow');
+	});		
+});
 
 
 
