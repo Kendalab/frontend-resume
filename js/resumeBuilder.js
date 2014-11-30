@@ -101,10 +101,6 @@ if (bio.skills.length > 0) {
 	for (x in bio.skills) {
 		var formattedSkills = HTMLskills.replace("%data%", bio.skills[x])
 		$("#skills").append(formattedSkills);
-				//var formattedSkills = HTMLskills.replace("%data%", bio.skills[1])
-		//$("#skills").append(formattedSkills);
-			//var formattedSkills = HTMLskills.replace("%data%", bio.skills[2])
-		//$("#skills").append(formattedSkills);
 	};
 }
 
@@ -185,7 +181,7 @@ $("#mapDiv").append(googleMap);
 
 $(document).ready(function() {
 	$('img').click(function(){
-		$('img').effect('bounce', 'slow');
+		$(this).effect('bounce', 'slow');
 	});		
 });
 
