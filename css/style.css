@@ -221,3 +221,7 @@ span {
 .content p {
   color: red;
 }
+
+.proj-img {
+  max-width: 100%;
+}
