@@ -16,25 +16,32 @@ var bio = {
 var work = {
 	"jobs": [
 		{
+			"employer": "Azureda Inc.",
+			"title": "Front-End Web Developer",
+			"location": "Toronto, Ontario",
+			"dates": "September 2014 - Current",
+			"description": " Use HTML5, CSS3, JavaScript, jQuery, and Bootstrap to build static web pages and web apps."
+		},
+		{
 			"employer": "Douglas Mental Health Hospital",
 			"title": "Graduate Student Researcher",
 			"location": "Montreal, Quebec",
-			"dates": "2012-2014",
-			"description": "Performed neuropsychological research relating to guilt, depression and suicide."
+			"dates": "September 2012 - September 2014",
+			"description": "Performed neuropsychological research relating to guilt, depression and suicide using clinical assessments, fMRI, EEG, and meta-analytic techniques."
 		},
 		{
 			"employer": "Rotman Research Institute at Baycrest",
 			"title": "Summer Student Researcher",
 			"location": "Toronto, Ontario",
 			"dates": "Summer 2012",
-			"description": "Performed neuropsychological research relating to vision, audition and ageing. Designed stimuli and experiment using MATLAB and Presentation."
+			"description": "Performed neuropsychological research relating to vision, audition and ageing using psychoaccoustic testing and MEG. Designed stimuli and experiment using MATLAB and Presentation."
 		},
 		{
 			"employer": "Turner Fliescher Architects Inc.",
 			"title": "Architectual Technician",
 			"location": "Toronto, Ontario",
 			"dates": "Summer 2010",
-			"description": "Designed site plans for various commercial clients."
+			"description": "Designed site plans for various commercial clients using AutoCAD and Revit."
 		}
 	]
 };
