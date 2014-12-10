@@ -9,7 +9,7 @@ var bio = {
 		"location": "Toronto, Ontario"
 	},
 	"pictureURL": "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/10403571_10202745620315741_8553441052524735893_n.jpg?oh=a99fefbab1fac54b388caed506e6c8e2&oe=54E1D402&__gda__=1424062845_2a9dab8ecf8a23aeb8f5b44532f0ecd7",
-	"welcome": "Welcome to my resume",
+	"welcome": "Highly motivated, self-starting team player desiring full-time work",
 	"skills": ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"]
 };
 
@@ -49,12 +49,11 @@ var work = {
 var education = {
 	"schools": [
 		{
-			"name": "McMaster University",
-			"location": "Hamilton, Ontario",
-			"degree": "B.Sc. Hon.",
-			"major": "Psychology, Behaviour & Neuroscience",
-			"minor": "None",
-			"graduation": 2012
+			"name": "Udacity",
+			"location": "Toronto, Ontario",
+			"degree": "Nanodegree",
+			"major": "Front-End Web Develper",
+			"graduation": 2015
 		},
 		{
 			"name": "McGill University",
@@ -63,6 +62,14 @@ var education = {
 			"major": "Integrated Program in Neuroscience",
 			"minor": "None",
 			"graduation": 2014
+		},
+		{
+			"name": "McMaster University",
+			"location": "Hamilton, Ontario",
+			"degree": "B.Sc. Hon.",
+			"major": "Psychology, Behaviour & Neuroscience",
+			"minor": "None",
+			"graduation": 2012
 		}
 	],
 	"onlineCourses": [
@@ -133,17 +140,6 @@ function displayWork() {
 displayWork();
 
 
-//My way of solving the quiz
-//function inName(name) {
-//	var splName = name.trim().split(" ");
-//	var firstName = splName[0];
-//	firstName = firstName[0].toUpperCase() + firstName.slice(1); 
-//
-//	var lastName = splName[1];
-//	lastName =lastName.toUpperCase()
-//	return firstName + " " + lastName;
-//}
-
 //Proper way to solve the quiz
 function inName(name) {
 	var name = name.trim().split(" ");
@@ -178,9 +174,37 @@ projects.display = function() {
 
 	}
 
-};
 
+
+};
 projects.display();
+education.display = function() {
+	for (z in education.schools) {
+		$("#education").append(HTMLschoolStart);
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[z].name);
+		$(".education-entry:last").append(formattedSchoolName);
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[z].degree);
+		$(".edication-entry:last").append(formattedSchoolDegree);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[z].graduation);
+		$(".education-entry:last").append(formattedSchoolDates);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[z].location);
+		$(".education-entry:last").append(formattedSchoolLocation);
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[z].major);
+		$(".education-entry:last").append(formattedSchoolMajor);
+		}
+
+
+
+};
+education.display();
+
+//footerContacts.display = function() {
+//	for (z in education.schools) {
+//		$("#education").append(HTMLschoolStart);
+//		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[z].name);
+//		$(".education-entry:last").append(formattedSchoolName);
+//		}
+//};
 
 
 
@@ -193,4 +217,18 @@ $(document).ready(function() {
 });
 
 
+footerContacts.display = function() {
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		$("#footerContacts").append(formattedMobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+		$("#footerContacts").append(formattedEmail);
+		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+		$("#footerContacts").append(formattedTwitter);
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+		$("#footerContacts").append(formattedGithub);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+		$("#footerContacts").append(formattedLocation);
+
+};
+footerContacts.display();
 
