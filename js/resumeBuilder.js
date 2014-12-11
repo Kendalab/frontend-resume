@@ -198,14 +198,6 @@ education.display = function() {
 };
 education.display();
 
-//footerContacts.display = function() {
-//	for (z in education.schools) {
-//		$("#education").append(HTMLschoolStart);
-//		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[z].name);
-//		$(".education-entry:last").append(formattedSchoolName);
-//		}
-//};
-
 
 
 $("#mapDiv").append(googleMap);
